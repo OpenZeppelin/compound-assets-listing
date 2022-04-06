@@ -35,7 +35,7 @@
 - [ ] Does the token use a compiler version greater than 0.8.0 or the SafeMath?
 - [ ] During the execution of the token's functions, does the token execute external code chosen by the caller or receiver?
 - [ ] Provide documentation.
-- [ ] Formal verification
+- [ ] Has formal verification with Certora?
 - [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features anyone should know about?
 - [ ] Is it burneable?
 - [ ] Does it have a fixed supply? If no, who can mint?
@@ -56,7 +56,8 @@
 ## Initial Requirements
 
 - [ ] Collateral factor to 0.
-- [ ] Borrow cap set.
+- [ ] Borrow cap set. If the loan can influence the governance system of the protocol associated with the underlying asset, the limit must take this into account, otherwise there should be no limit.
+- [ ] Reserve factor to 25% for volatile assets, 15-5% for stablecoins.
 
 ### Considerations
 
