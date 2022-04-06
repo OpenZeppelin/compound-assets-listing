@@ -1,12 +1,70 @@
-- A user who supplies tokens is unable to withdraw them
-    - Insolvency risk - the value of the funds held by the protocol is less than the liabilities of the protocol.
-    - Liquidity risk - the funds users wish to withdraw are not available for withdrawal, though the protocol holds other tokens of sufficient value to eventually allow the withdrawal
 
-- A user who borrows funds pays unnecessary fees
-    - Someone manipulates the price of assets, either in the oracle or by taking advantage of limited market liquidity to create large price swings. This can cause liquidations on assets that belies expectation and borrowers would pay liquidation penalties
-    - An interest rate curve for an asset creates swing in interest rates that would appear usurious
+# Protocol risks
 
-- A protocol hack or bug
-    - Someone finds a vulnerability in the protocol that allows them to withdraw a ton of value from the protocol, often referred to as a protocol “hack”
-    - An error in the honest execution of an action, in this case, adding a new asset, that could destroy or lose user funds
-        - Assets that rebase like AMPL, which behave differently than standard ERC20s, can be prone to these issues. I’m not picking on AMPL here - it’s been added to AAVE after extensive testing and so it is a great example that when these risks arise, how they can be addressed.
+## Security
+
+- **Codebase bug**: smart contract bugs that might be exploited. For this reason Compound codebase went to [several round of audits](link)
+
+- **External integrations failures**: Currently Compound depends on Uniswap v3 TWAP and Chainlink oracles integrations. Oracle manipulations can lead to price manipulations as described below. The `UniswapAnchoredView` contract enforce price swings to not be bigger than the `anchor` established mitigating partially the issue. The contract also stores a fallback mechanism to Uniswap v3 TWAP prices whenever price reporters become unreliable, and this might mitigate the issue assuming that:
+    - Proper monitoring solutions are setup to detect any downtime on reporters as soon as possible.
+    - Admin actions are taken to activate fallback mechanism on oracle and that the corresponding Uniswap v3 pool has enough liquidity to avoid pool liquidity manipulations.
+
+## Governance
+
+- **Wrong governance action**: A proposal containing dangerous transactions is executed. Like oversized COMP distribution issue. The B2DAO relation was born to remediate to this.
+
+- **Governance attacks**: Concentration of big quantities of COMP (relative to thresholds and quorum paramters that might be present on Governance contract) through loans/buy in few wallets that might defeat governance itself. Potential but unrealistic, no examples have been found of such an attack.
+
+## Market
+
+- **Price manipulation**: If price manipulation happens in a low liquidity market, prices can changes fast and cause honest borrowers to be liquidated, being subjected to liquidation penalties.
+
+- **Insolvency risk**: The value of the funds held by the protocol is less than the liabilities of the protocol.
+
+- **Liquidity risk**: To be illiquid (not insolvent) depending on active borrows, borrow limits and collateralization ratios.
+
+- **Not incentivized liquidations**: External prices for an asset can crash to the point that liquidators are not incentivized to execute liquidations, leaving the protocol unhealthy.
+
+- **Cascade effect**: Liquidations affecting crash of market prices that causes more liquidations. Deflationary spiral.
+
+Market risks are deeply analyzed in [Gauntlet's report](https://gauntlet.network/reports/compound)
+
+# Asset specific risks:
+
+## Compatibility
+
+- **Extra asset features**
+
+- **ERC20 deviations**
+
+## Compliance
+
+- **Asset decentralization level**
+
+- **External codebase bug/hack**
+
+# List of external tokens interactions:
+
+## Protocols contracts that interact with ERC20 tokens and the relative functions interacting:
+
+- In `CErc20`
+    - `sweepToken`
+    - `getCashPrior`
+    - `doTransferIn`
+    - `initialize`
+
+- In `Comptroller`
+    - `updateCompSupplyIndex`
+    - `distributeSupplierComp`
+    - `grantCompInternal`
+
+- In `GovernorBravoDelegate` (only `COMP`)
+    - `castVoteInternal`
+    - `cancel`
+
+## ERC20 functions involved:
+
+- `balanceOf`
+- `transferFrom`
+- `totalSupply`
+- `delegate` and `getPriorVotes` for `COMP` or `COMP` like tokens
