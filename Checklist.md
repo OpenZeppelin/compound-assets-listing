@@ -37,6 +37,9 @@
 - [ ] Formal verification
 - [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features Compound should know about?
 - [ ] Is it upgradeable?
+  - [ ] Who is authorized to make an upgrade?
+  - [ ] Can an upgrade happen instantaneously or is there a time-lock delay?
+  - [ ] Which components can be upgraded?
 
 
 ## Community Check
@@ -45,3 +48,7 @@
 - [ ] Correct configuration of the contracts (cToken, oracle, etc.).
 - [ ] Execute available test suite and simulations.
 - [ ] Check documentation quality.
+
+## Initial Requirements
+
+- [ ] Collateral factor to 0
