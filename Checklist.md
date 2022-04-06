@@ -62,3 +62,5 @@
 
 - [ ] Proposals must be first in the Compound forum in the *New Markets* category.
 - [ ] The proposal must have a link that directs to the corresponding thread in the forum.
+- [ ] One token per proposal.
+- [ ] Use markdown in the description of the proposal in the transaction, add links and start with # Add market: NAME.
