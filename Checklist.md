@@ -51,4 +51,8 @@
 
 ## Initial Requirements
 
-- [ ] Collateral factor to 0
+- [ ] Collateral factor to 0.
+
+### Considerations
+
+- [ ] Proposals must be first in the Compound forum in the *New Markets* category.
