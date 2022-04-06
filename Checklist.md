@@ -52,6 +52,7 @@
 ## Initial Requirements
 
 - [ ] Collateral factor to 0.
+- [ ] Borrow cap set.
 
 ### Considerations
 
