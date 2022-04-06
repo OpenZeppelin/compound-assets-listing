@@ -6,6 +6,7 @@
 
 - [ ] Name.
 - [ ] Description.
+- [ ] Social Media Links.
 
 ### Market Risk Assessment
 
@@ -22,8 +23,8 @@
 
 ### Smart contract risk
 
-- [ ] Etherscan link.
-- [ ] Public repo link.
+- [ ] Etherscan links with verified contracts (token, cToken and new oracle).
+- [ ] Public repo link (Underlying token).
 - [ ] What audits, if any, have been done?
 - [ ] Age of the token in days.
 - [ ] Number of transactions in the contract.
