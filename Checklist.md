@@ -36,7 +36,7 @@
 - [ ] During the execution of the token's functions, does the token execute external code chosen by the caller or receiver?
 - [ ] Provide documentation.
 - [ ] Formal verification
-- [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features Compound should know about?
+- [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features anyone should know about?
 - [ ] Is it upgradeable?
   - [ ] Who is authorized to make an upgrade?
   - [ ] Can an upgrade happen instantaneously or is there a time-lock delay?
