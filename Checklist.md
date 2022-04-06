@@ -32,7 +32,7 @@
 - [ ] List of all monitoring services used by the token, if any.
 - [ ] Does the token have more than one address?
 - [ ] Provide test suite with code coverage.
-- [ ] Does the token use a compiler version greater than 0.8.0 or the SafeMath?
+- [ ] Does the token use a compiler version greater than 0.8.0 or the SafeMath library?
 - [ ] During the execution of the token's functions, does the token execute external code chosen by the caller or receiver?
 - [ ] Provide documentation.
 - [ ] Has formal verification with Certora?
