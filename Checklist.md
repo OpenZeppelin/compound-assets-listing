@@ -6,6 +6,7 @@
 
 - [ ] Name.
 - [ ] Description.
+- [ ] Applicant information.
 - [ ] Social Media Links.
 
 ### Market Risk Assessment
