@@ -73,4 +73,4 @@ Lastly it is important to remark which are the concrete interactions between Com
 - `balanceOf`
 - `transferFrom`
 - `totalSupply`
-- `delegate` and `getPriorVotes` only for [`COMP`](https://etherscan.io/address/0xc00e94cb662c3520282e6f5717214004a7f26888#code) or `COMP` like tokens
+- `delegate` and `getPriorVotes` only for [`COMP`](https://etherscan.io/address/0xc00e94cb662c3520282e6f5717214004a7f26888#code) or `COMP`-like tokens
