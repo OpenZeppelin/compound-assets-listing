@@ -1,48 +1,19 @@
-1) Application: present an application form based on a template that explore details of the assets on how it works, why meant to be added to Compound, list of questions:
+1) Initialization: new market proposer review the [checklist]() and provide as much as info they can (some fields are required) in a forum post titled "Add market: XXX" under "New Market" category in Compound forum
 
-    - Overview
-        What is the token name and ticker symbol?
-        What the the token do?
-        What additional risks might supporting this token create?
-        What audits, if any, have been done?
-        Have there ever been any protocol hacks? If so, when? How were they addressed?
-        Emergency contact for incidente response ?
-    
-    - Market Risk Information
-        What venues allow for the trading of this asset?
-        How much liquidity is there on each of these venues?
-        How has that liquidity changed over time? One way to show this is with rolling 30/60/90 averages.
-        What is the historical volatility of this asset?
+2) Community check: community handles back and forth to review that info provided is correct and complete.
 
-    - Decentralization
-        How is this asset distributed amongst token holders?
-        GINI Coefficient
-        Largest 10 positions and the percent of total float they constitute
-        How is the supply of this currency controlled?
-        Centralization scale (Centrally Backed → Permisionless)
-    
-    - Contracts related
-        UAV
-        More..
+3) Scoring: the community check output is a scoring mechanism that assign a score to the proposed market.
 
-    - Parameters            
-        Collateral Factor - will be 0 for all assets until after launch
-        Reserve Factor (probably should start pretty high)
-        Borrow Cap
-        Interest Rate Curve
-        Should likely start with an existing interest rate curve
+4) Promoter is asked to deploy the needed contracts (CErc20Delegator, CErc20Delegate, optionally a new UAV) and provide their deployed address in the same forum post.
 
-    - Output should have a score
+5) Tooling and simulations: community performs run on unit tests and scenario simulations with the new asset
 
-    - Monitoring reccomendations 
+6) Proposal's draft: A formal proposal is drafted. It must include `supportMarket` and `setCollateralFactor` at least.
 
-2) Automation & Implementation Review: 
+7) [OPTIONAL] OpenZeppelin audit: proposal is reviewed
 
-    - Running tools: sanity checks, automatic detection on implementation/proxy
-    - Testing: simulate governance proposal, accrue of interests, mint, redeem, borrow, repay, liquidations
-    - Stress tests scenario (flash loans attacks, oracle manipulations etc) 
-    - Deployment
+8) Proposal submission: proposal is submitted.
 
-3) Proposal: Pushing the Proposal and vote on it
+9) If proposal fails, forum post is updated with results.
 
-4) Post-Launch Parameter Update: after launch, increasing collateral factor to a safe level and setting the reserve factor in line with other assets
+10) Post-Launch Parameter Update: after launch, increasing collateral factor to a safe level and setting the reserve factor in line with other assets. Borrow limits can be optionally set and a new oracle might be needed for the asset to work.
