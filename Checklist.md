@@ -51,7 +51,7 @@
   - [ ] Which components can be upgraded?
   - [ ] How the upgradeability design work? Who manages it and how upgrades are done?
 
-## Initial Requirements
+### Initial Requirements
 
 - [ ] Collateral factor to 0.
 - [ ] Established borrow limit if necessary (Usually it is set if large loans could manipulate the governance of the protocol).
