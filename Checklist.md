@@ -51,15 +51,6 @@
   - [ ] Which components can be upgraded?
   - [ ] How the upgradeability design work? Who manages it and how upgrades are done?
 
-
-## Community Check
-
-- [ ] Veracity or the info provided.
-- [ ] Correct configuration of the contracts (cToken, oracle, etc.).
-- [ ] Run eth-saddle or any tool to check if the implemented contract matches the base implementation with the expected parameters.
-- [ ] Execute available test suite and simulations.
-- [ ] Check documentation quality.
-
 ## Initial Requirements
 
 - [ ] Collateral factor to 0.
@@ -74,5 +65,18 @@
 - [ ] All actions in the proposal must be related to the listing of the token.
 - [ ] Do not deploy contracts without first submitting the proposal to the forum.
 - [ ] Use markdown in the description of the proposal in the transaction, add links and start with # Add market: NAME.
+
+
+## Community Check
+
+- [ ] Veracity or the info provided.
+- [ ] Correct configuration of the contracts (cToken, oracle, etc.).
+- [ ] Run eth-saddle or any tool to check if the implemented contract matches the base implementation with the expected parameters.
+- [ ] Execute available test suite and simulations.
+- [ ] Check documentation quality.
+
+## Future improvements
+
+- [ ] An implementation that integrates with the forum and enforce applicants to fill in required fields to avoid bypass of important information.
 - [ ] In the future, we hope that many of these checklist items can be auto-completed to reduce the friction of submitting a proposal to the forum.
-- [ ] This checklist can be modified with new items as the community deems necessary. It can be through the same or similar mechanisms as GitHub's Pull Request.
+- [ ] This checklist will be modified with new items as the community deems necessary. It can be through the same or similar mechanisms as GitHub's Pull Request.
