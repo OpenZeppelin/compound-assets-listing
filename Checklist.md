@@ -35,6 +35,7 @@
 - [ ] Does the token use a compiler version greater than 0.8.0 or the SafeMath?
 - [ ] During the execution of the token's functions, does the token execute external code chosen by the caller or receiver?
 - [ ] Provide documentation.
+- [ ] Does it have an active bug bounty program?
 - [ ] Formal verification
 - [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features anyone should know about?
 - [ ] Is it burneable?
