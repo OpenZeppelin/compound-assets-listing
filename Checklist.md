@@ -52,6 +52,7 @@
 
 - [ ] Veracity or the info provided.
 - [ ] Correct configuration of the contracts (cToken, oracle, etc.).
+- [ ] Run eth-saddle or any tool to check if the implemented contract matches the base implementation with the expected parameters.
 - [ ] Execute available test suite and simulations.
 - [ ] Check documentation quality.
 
@@ -65,4 +66,6 @@
 - [ ] Proposals must be first in the Compound forum in the *New Markets* category.
 - [ ] The proposal must have a link that directs to the corresponding thread in the forum.
 - [ ] One token per proposal.
+- [ ] Do not deploy contracts without first submitting the proposal to the forum.
 - [ ] Use markdown in the description of the proposal in the transaction, add links and start with # Add market: NAME.
+- [ ] This checklist can be modified with new items as the community deems necessary. It can be through the same or similar mechanisms as GitHub's Pull Request.
