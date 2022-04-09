@@ -39,6 +39,8 @@
 - [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features anyone should know about?
 - [ ] Is it burneable?
 - [ ] Does it have a fixed supply? If no, who can mint?
+- [ ] Is it a Rebase token?
+- [ ] Does the token charge fees on transfers?
 - [ ] Is it upgradeable?
   - [ ] Who is authorized to make an upgrade?
   - [ ] Can an upgrade happen instantaneously or is there a time-lock delay?
