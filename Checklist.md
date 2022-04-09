@@ -63,13 +63,16 @@
 ## Initial Requirements
 
 - [ ] Collateral factor to 0.
-- [ ] Borrow cap set.
+- [ ] Established borrow limit if necessary (Usually it is set if large loans could manipulate the governance of the protocol).
+- [ ] Reserve Factor to 25%.
 
 ### Considerations
 
 - [ ] Proposals must be first in the Compound forum in the *New Markets* category.
 - [ ] The proposal must have a link that directs to the corresponding thread in the forum.
 - [ ] One token per proposal.
+- [ ] All actions in the proposal must be related to the listing of the token.
 - [ ] Do not deploy contracts without first submitting the proposal to the forum.
 - [ ] Use markdown in the description of the proposal in the transaction, add links and start with # Add market: NAME.
+- [ ] In the future, we hope that many of these checklist items can be auto-completed to reduce the friction of submitting a proposal to the forum.
 - [ ] This checklist can be modified with new items as the community deems necessary. It can be through the same or similar mechanisms as GitHub's Pull Request.
