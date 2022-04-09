@@ -42,6 +42,9 @@
 - [ ] Does it have a fixed supply? If no, who can mint?
 - [ ] Is it a Rebase token?
 - [ ] Does the token charge fees on transfers?
+- [ ] Is the contract performing arbitrary `delegatecall`s?
+- [ ] Is it flash mintable?
+- [ ] Is it flash loanable?
 - [ ] Is it upgradeable?
   - [ ] Who is authorized to make an upgrade?
   - [ ] Can an upgrade happen instantaneously or is there a time-lock delay?
