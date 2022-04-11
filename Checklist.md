@@ -78,5 +78,5 @@
 ## Future improvements
 
 - [ ] An implementation that integrates with the forum and enforce applicants to fill in required fields to avoid bypass of important information.
-- [ ] In the future, we hope that many of these checklist items can be auto-completed to reduce the friction of submitting a proposal to the forum.
+- [ ] In the future, we hope that many of these checklist items can be auto-completed to reduce the friction of submitting a proposal to the forum by some on-chain tooling that extract automatically some items.
 - [ ] This checklist will be modified with new items as the community deems necessary. It can be through the same or similar mechanisms as GitHub's Pull Request.
