@@ -67,9 +67,11 @@
 - [ ] Use markdown in the description of the proposal in the transaction, add links and start with # Add market: NAME.
 
 ## Community Check
+The community should review the following items before approving a new asset.
 
 - [ ] Veracity or the info provided.
 - [ ] Correct configuration of the contracts (cToken, oracle, etc.).
-- [ ] Check documentation quality.
+- [ ] Documentation quality.
+- [ ] Favorable results in the execution of the token test suite or integration simulations.
 
 
