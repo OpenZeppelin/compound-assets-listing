@@ -3,17 +3,17 @@
 
 ## Security
 
-- **Codebase bug**: smart contract bugs that might be exploited. For this reason Compound codebase went to [several round of audits](https://compound.finance/docs/security)
+- **Codebase bug**: smart contract bugs that might be exploited. For this reason Compound battle-tested codebase went to [several round of audits](https://compound.finance/docs/security).
 
-- **External integrations failures**: Currently Compound depends on Uniswap v3 TWAP and Chainlink oracles integrations. Oracle manipulations can lead to price manipulations as described below. The `UniswapAnchoredView` contract enforce price swings to not be bigger than the `anchor` established mitigating partially the issue. The contract also stores a fallback mechanism to Uniswap v3 TWAP prices whenever price reporters become unreliable, and this might mitigate the issue assuming that:
+- **External integrations failures**: Currently Compound depends on Uniswap v3 TWAP and Chainlink oracles integrations. Oracle manipulations can lead to price manipulations as described in market's risk section. The `UniswapAnchoredView` contract enforces price swings to not be bigger than the `anchor` established, mitigating the issue. The contract also stores a fallback mechanism to Uniswap v3 TWAP prices whenever price reporters become unreliable, and this might mitigate the issue assuming that:
     - Proper monitoring solutions are setup to detect any downtime on reporters as soon as possible.
     - Admin actions are taken to activate fallback mechanism on oracle and that the corresponding Uniswap v3 pool has enough liquidity to avoid pool liquidity manipulations.
 
 ## Governance
 
-- **Wrong governance actions**: A proposal containing dangerous transactions is executed. Like oversized COMP distribution issue. OpenZeppelin newborn relationship with Compound was born out of the necessity to avoid having proposals undermining the protocol itself being voted and executed.
+- **Wrong governance actions**: A proposal containing dangerous transactions is executed. Like oversized COMP distribution issue. OpenZeppelin newborn relationship with Compound was set up out of the necessity to avoid having proposals undermining the protocol itself, being voted and executed.
 
-- **Governance attacks**: Concentration of big quantities of COMP (relative to thresholds and quorum paramters that might be present on Governance contract) through loans/buy in few wallets that might defeat governance itself. Potential but unrealistic, no examples have been found of such an attack.
+- **Governance attacks**: Concentration of big quantities of COMP (relative to thresholds and quorum parameters that might be present in the governance contracts) through loans/buy in few wallets that might defeat governance itself. This is a potential but unrealistic risk, as no concrete examples have been found.
 
 ## Market
 
@@ -25,19 +25,19 @@ Market risks are deeply analyzed and covered in [Gauntlet's report](https://gaun
 
 - **Liquidity risk**: To be illiquid (not insolvent) depending on active borrows, borrow limits and collateralization ratios.
 
-- **Not incentivized liquidations**: External prices for an asset can crash to the point that liquidators are not incentivized to execute liquidations, leaving the protocol unhealthy.
+- **Not incentivized liquidations**: The prices can crash so much that liquidations are not profitable anymore, leading to a lack of incentivized liquidators.
 
-- **Cascade effect**: Liquidations affecting crash of market prices that causes more liquidations. Deflationary spiral. Some modifications have been proposed to mitigate this, specifically proposal [#49](https://compound.finance/governance/proposals/49).
+- **Cascade effect**: Liquidations producing price crashes in external markets creating a deflationary spiral that triggers more liquidations. Some modifications have been proposed to mitigate this, specifically proposal [#49](https://compound.finance/governance/proposals/49).
 
-We highgly reccommend going through the Gauntlet's report to understand how those are mitigated by the current protocol design.
+We highly reccommend going through the Gauntlet's report to understand how these risks are mitigated or addressed by the current protocol design.
 
 # Asset specific risks:
 
-All assets specific risks (compatibility and compliance one) should be addressed in a structured manner. OpenZeppelin will propose a [Checklist](Checklist.md) of topics to watch out for and evaluate when it comes to onboard new assets. Together with this checklist we will provide a comprehensive process to follow for new assets listing.
+All assets specific risks (compatibility and compliance one) should be addressed in a structured manner. OpenZeppelin proposes a [Checklist](Checklist.md) of topics to watch out for and evaluate when it comes to onboard new assets. Together with this checklist we provide a comprehensive [Process](Process.md) to follow for new assets listing.
 
 ## Compatibility
 
-- **Extra asset features**: How extra features can have unwanted or unexpected effects on the ERC20 functions involved in Compound integration (listed below).
+- **Extra asset features**: How extra features can have unwanted or unexpected effects on the ERC20 functions involved in Compound integration (listed at the end of this document).
 
 - **ERC20 deviations**: Depending on how much the asset deviates from ERC20 standard, it might defeat basic protocol assumptions on how ERC20 tokens behave. Rebasing, deflationary or fees-driven tokens might give unexepcted results on basic operations like `transfer` or `balanceOf`.
 

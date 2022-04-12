@@ -26,6 +26,7 @@
 - [ ] List all the the privilege roles in the token contract*
 - [ ] Is pauseable?*
 - [ ] Has a blacklist?*
+- [ ] How many wallets hold the 50% of the supply ?
 
 ### Smart contract risk
 
@@ -34,7 +35,7 @@
 - [ ] What audits, if any, have been done?*
 - [ ] Age of the token in days*
 - [ ] Number of transactions in the contract*
-- [ ] Provide emergency contacts*
+- [ ] Provide emergency contacts with their responsivness levels and response availabilities* 
 - [ ] List of all monitoring services used by the token, if any.
 - [ ] Does the token have more than one address?*
 - [ ] Provide test suite with code coverage.
@@ -46,7 +47,7 @@
 - [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features that the Compound DAO should know about?*
 - [ ] Is it burneable?*
 - [ ] Does it have a fixed supply? If no, who can mint?*
-- [ ] Is it a Rebase token?*
+- [ ] Is it a rebasing token?*
 - [ ] Does the token charge fees on transfers?*
 - [ ] Is the contract performing arbitrary `delegatecall`s?*
 - [ ] Is it flash mintable?*
@@ -56,6 +57,7 @@
   - [ ] Can an upgrade happen instantaneously or is there a time-lock delay?
   - [ ] Which components can be upgraded?
   - [ ] How the upgradeability design work? Who manages it and how upgrades are done?
+  - [ ] Does it emit an event when implementation is updated ?
 
 ### Initial Requirements
 
@@ -67,7 +69,7 @@
 
 - [ ] Proposals must be first in the Compound forum in the *New Markets* category.
 - [ ] The proposal must have a link that directs to the corresponding thread in the forum.
-- [ ] One token per proposal.
+- [ ] One proposal per asset.
 - [ ] All actions in the proposal must be related to the listing of the token.
 - [ ] Do not deploy contracts without first submitting the proposal to the forum.
 - [ ] Use markdown in the description of the proposal in the transaction, add links and start with # Add market: NAME.
