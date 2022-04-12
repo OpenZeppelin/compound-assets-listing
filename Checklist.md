@@ -43,7 +43,7 @@
 - [ ] Provide documentation*
 - [ ] Does it have an active bug bounty program?
 - [ ] Formal verification.
-- [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features anyone should know about?*
+- [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features that the Compound DAO should know about?*
 - [ ] Is it burneable?*
 - [ ] Does it have a fixed supply? If no, who can mint?*
 - [ ] Is it a Rebase token?*
