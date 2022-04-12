@@ -7,14 +7,18 @@
 ### General
 
 - [ ] Name*
-- [ ] Description*
-- [ ] Social Media Links*
+- [ ] Description of the project and the token*
+- [ ] Benefits to Compound Community*
+- [ ] Resources (Website, Social Media Links and docs)*
+- [ ] What is the link between the author of the new market proposal and the token?*
+- [ ] Social channels Metrics (Size, activity and growth).
 
 ### Market Risk Assessment
 
 - [ ] Market Cap of the token*
 - [ ] On which exchanges is the token listed and what is its respective liquidity?*
 - [ ] Indicate volatility of the token using Gauntlet formula.
+- [ ] Emission schedule.
 
 ### Decentralization
 
