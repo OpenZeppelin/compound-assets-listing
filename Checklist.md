@@ -35,7 +35,7 @@
 - [ ] What audits, if any, have been done?*
 - [ ] Age of the token in days*
 - [ ] Number of transactions in the contract*
-- [ ] Provide emergency contacts with their responsivness levels and response availabilities* 
+- [ ] Provide emergency contacts with their responsiveness levels and response availabilities* 
 - [ ] List of all monitoring services used by the token, if any.
 - [ ] Does the token have more than one address?*
 - [ ] Provide test suite with code coverage.
