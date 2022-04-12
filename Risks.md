@@ -29,7 +29,7 @@ Market risks are deeply analyzed and covered in [Gauntlet's report](https://gaun
 
 - **Cascade effect**: Liquidations producing price crashes in external markets creating a deflationary spiral that triggers more liquidations. Some modifications have been proposed to mitigate this, specifically proposal [#49](https://compound.finance/governance/proposals/49).
 
-We highly reccommend going through the Gauntlet's report to understand how these risks are mitigated or addressed by the current protocol design.
+We highly recommend going through the Gauntlet's report to understand how these risks are mitigated or addressed by the current protocol design.
 
 # Asset specific risks:
 
@@ -39,7 +39,7 @@ All assets specific risks (compatibility and compliance one) should be addressed
 
 - **Extra asset features**: How extra features can have unwanted or unexpected effects on the ERC20 functions involved in Compound integration (listed at the end of this document).
 
-- **ERC20 deviations**: Depending on how much the asset deviates from ERC20 standard, it might defeat basic protocol assumptions on how ERC20 tokens behave. Rebasing, deflationary or fees-driven tokens might give unexepcted results on basic operations like `transfer` or `balanceOf`.
+- **ERC20 deviations**: Depending on how much the asset deviates from ERC20 standard, it might defeat basic protocol assumptions on how ERC20 tokens behave. Rebasing, deflationary or fees-driven tokens might give unexpected results on basic operations like `transfer` or `balanceOf`.
 
 ## Compliance
 
