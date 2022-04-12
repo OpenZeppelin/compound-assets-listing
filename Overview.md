@@ -23,6 +23,7 @@ With this, our intention is to establish a structured process for secure asset l
 - [ ] In the future, we hope that many of the checklist items can be auto-completed in a trustless way to reduce the friction of submitting a proposal to the forum by some on-chain tooling and/or scanners to retrieve information automatically.
 - [ ] The checklist will be modified with new items as the community deems necessary. It can be through the same or similar mechanisms as GitHub's Pull Request.
 - [ ] The tooling part can be improved. Scenario simulations would benefit from a standardization and enforcement of running them during listing process.
+- [ ] Create a scoring framework.
 - [ ] In the process, we mentioned two WIP (Work-In-Progress) items:
     - Auditing new listings
     - Running asset specific market risk analysis
