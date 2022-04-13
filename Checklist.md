@@ -19,15 +19,15 @@
 - [ ] Market Cap of the token*
 - [ ] On which exchanges is the token listed and what is its respective liquidity?*
 - [ ] Indicate volatility of the token using Gauntlet formula.
+- [ ] Total supply*
 - [ ] Emission schedule.
 
 ### Decentralization
 
-- [ ] How is this asset distributed amongst token holders? List the top 10 holders of the token and tag them in case they are known*
+- [ ] How is this asset distributed amongst token holders? List the top 10 holders, the percentage of each and tag them in case they are known*
 - [ ] List all the the privilege roles in the token contract*
 - [ ] Is pauseable?*
 - [ ] Has a blacklist?*
-- [ ] How many wallets hold the 50% of the supply ?
 
 ### Smart contract risk
 
@@ -38,11 +38,10 @@
 - [ ] Number of transactions in the contract*
 - [ ] Provide emergency contacts with their responsiveness levels and response availabilities* 
 - [ ] List of all monitoring services used by the token, if any.
-- [ ] Does the token have more than one address?*
+- [ ] Does the token have more than one address[^1]?*
 - [ ] Provide test suite with code coverage.
-- [ ] Does the token use a compiler version greater than 0.8.0 or the SafeMath?*
-- [ ] During the execution of the token's functions, does the token execute external code chosen by the caller or receiver?*
-- [ ] Provide documentation*
+- [ ] Does the token use a compiler version greater than 0.8.0 or the SafeMath? If not, explain how the protocol deals with possible overflows and underflows*
+- [ ] During the execution of the token's functions, does the token execute external code chosen by the caller or receiver?[^2] If so, please explain the reasoning behind this decision*
 - [ ] Does it have an active bug bounty program?
 - [ ] Formal verification.
 - [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features that the Compound DAO should know about?*
@@ -50,21 +49,21 @@
 - [ ] Does it have a fixed supply? If no, who can mint?*
 - [ ] Is it a rebasing token?*
 - [ ] Does the token charge fees on transfers?*
-- [ ] Is the contract performing arbitrary `delegatecall`s?*
-- [ ] Is it flash mintable?*
-- [ ] Is it flash loanable?*
-- [ ] Is it upgradeable?*
+- [ ] Is the contract performing arbitrary `delegatecall`s?* If the answer is yes, indicate who can make these calls and to what contracts.
+- [ ] Is it flash mintable? If yes, please provide more information on this feature*
+- [ ] Is it flash loanable? If yes, please indicate who offers the service.*
+- [ ] Is it upgradeable?* If yes, answer the following questions:
   - [ ] Who is authorized to make an upgrade?
   - [ ] Can an upgrade happen instantaneously or is there a time-lock delay?
   - [ ] Which components can be upgraded?
   - [ ] How the upgradeability design work? Who manages it and how upgrades are done?
-  - [ ] Does it emit an event when implementation is updated ?
+  - [ ] Does it emit an event when implementation is updated?
 
 ### Initial Requirements
 
 - [ ] Collateral factor to 0.
 - [ ] Established borrow limit if necessary (Usually it is set if large loans of this assets are associated to governance attacks related to the asset itself).
-- [ ] Reserve Factor to 25% or any other convenient value depending on the assets volatility and category.
+- [ ] Reserve Factor to 25% (any other convenient value can be set in other proposal depending on the assets volatility and category).
 
 ### Considerations
 
@@ -82,5 +81,8 @@ The community should review the following items before approving a new asset.
 - [ ] Correct configuration of the contracts (cToken, oracle, etc.).
 - [ ] Documentation quality.
 - [ ] Favorable results in the execution of the token test suite or integration simulations.
+
+[^1]: [Double entry point vulnerability TUSD](https://blog.openzeppelin.com/compound-tusd-integration-issue-retrospective/).
+[^2]: [C.R.E.A.M. Finance Post Mortem: AMP Exploit](https://medium.com/cream-finance/c-r-e-a-m-finance-post-mortem-amp-exploit-6ceb20a630c5).
 
 
