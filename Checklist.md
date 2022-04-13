@@ -10,6 +10,7 @@
 - [ ] Description of the project and the token*
 - [ ] Benefits to Compound Community*
 - [ ] Resources (Website, Social Media Links and docs)*
+- [ ] Who is the proposer ?
 - [ ] What is the link between the author of the new market proposal and the token?*
 - [ ] Social channels Metrics (Size, activity and growth).
 
