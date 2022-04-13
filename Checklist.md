@@ -62,8 +62,8 @@
 ### Initial Requirements
 
 - [ ] Collateral factor to 0.
-- [ ] Established borrow limit if necessary (Usually it is set if large loans could manipulate the governance of the protocol).
-- [ ] Reserve Factor to 25%.
+- [ ] Established borrow limit if necessary (Usually it is set if large loans of this assets are associated to governance attacks related to the asset itself).
+- [ ] Reserve Factor to 25% or any other convenient value depending on the assets volatility and category.
 
 ### Considerations
 
