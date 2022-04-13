@@ -1,4 +1,4 @@
-# Introduction
+# # Compound Asset Listing - Overview
 
 During latest round of OpenZeppelin engagement with Compound, we reviewed past asset listing proposals and went through some important past community discussions around the topic. Further exploration has been done across some other protocols to take inspirations by established processes to list a new asset. 
 
