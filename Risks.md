@@ -1,7 +1,8 @@
+# Compound Asset Listing - Risks
 
-# Protocol risks
+## Protocol risks
 
-## Security
+### Security
 
 - **Codebase bug**: smart contract bugs that might be exploited. For this reason Compound battle-tested codebase went to [several round of audits](https://compound.finance/docs/security).
 
@@ -9,13 +10,13 @@
     - Proper monitoring solutions are setup to detect any downtime on reporters as soon as possible.
     - Admin actions are taken to activate fallback mechanism on oracle and that the corresponding Uniswap v3 pool has enough liquidity to avoid pool liquidity manipulations.
 
-## Governance
+### Governance
 
 - **Wrong governance actions**: A proposal containing dangerous transactions is executed. Like oversized COMP distribution issue. OpenZeppelin newborn relationship with Compound was set up out of the necessity to avoid having proposals undermining the protocol itself, being voted and executed.
 
 - **Governance attacks**: Concentration of big quantities of COMP (relative to thresholds and quorum parameters that might be present in the governance contracts) through loans/buy in few wallets that might defeat governance itself. This is a potential but unrealistic risk, as no concrete examples have been found.
 
-## Market
+### Market
 
 Market risks are deeply analyzed and covered in [Gauntlet's report](https://gauntlet.network/reports/compound) and they can be resumed in:
 
@@ -31,27 +32,27 @@ Market risks are deeply analyzed and covered in [Gauntlet's report](https://gaun
 
 We highly recommend going through the Gauntlet's report to understand how these risks are mitigated or addressed by the current protocol design.
 
-# Asset specific risks:
+## Asset specific risks:
 
 All assets specific risks (compatibility and compliance one) should be addressed in a structured manner. OpenZeppelin proposes a [Checklist](Checklist.md) of topics to watch out for and evaluate when it comes to onboard new assets. Together with this checklist we provide a comprehensive [Process](Process.md) to follow for new assets listing.
 
-## Compatibility
+### Compatibility
 
 - **Extra asset features**: How extra features can have unwanted or unexpected effects on the ERC20 functions involved in Compound integration (listed at the end of this document).
 
 - **ERC20 deviations**: Depending on how much the asset deviates from ERC20 standard, it might defeat basic protocol assumptions on how ERC20 tokens behave. Rebasing, deflationary or fees-driven tokens might give unexpected results on basic operations like `transfer` or `balanceOf`.
 
-## Compliance
+### Compliance
 
 - **Asset decentralization level**: Having an asset highly centralized can lead to unexpected minting, and more if the asset has access control with centralized parties in power of it, where also transfer may unexpectedly fail for some blacklisting feature. It is important to asses sensitive asset's functionalities and determine the grade of decentralization.
 
 - **External codebase bug/hack**: Assets are smart contracts as anything else and they might contain bugs that can be exploited at some point. Assessing how those bugs can cause issues with Compound means in the first instance to recognize them and later study their implications.
 
-# List of external tokens interactions:
+## List of external tokens interactions:
 
 Lastly it is important to remark which are the concrete interactions between Compound and external asset's contracts.
 
-## Protocols contracts that interact with ERC20 tokens (including cTokens) and the relative functions interacting:
+### Protocols contracts that interact with ERC20 tokens (including cTokens) and the relative functions interacting:
 
 - In `CErc20`
     - [`sweepToken`](https://etherscan.io/address/0x3363bae2fc44da742df13cd3ee94b6bb868ea376#code#F1#L124) to recover tokens mistakenly sent to the contract. This function `transfer`s out of the contract the entire contract's balance of the requested asset. It is callable only by the administrator. One fixed issue, was about this function not being protected over assets with a double entry point. Read more about it [here](https://blog.openzeppelin.com/compound-tusd-integration-issue-retrospective/).
@@ -68,7 +69,7 @@ Lastly it is important to remark which are the concrete interactions between Com
     - [`castVoteInternal`](https://etherscan.io/address/0x563a63d650a5d259abae9248dddc6867813d3f87#code#F1#L266) which is used internally to save the result of a vote cast. It uses the `getPriorVotes` function from COMP token.
     - [`cancel`](https://etherscan.io/address/0x563a63d650a5d259abae9248dddc6867813d3f87#code#F1#L156) which is used to cancel a proposal which is not being executed yet and that makes uses again of the `getPriorVotes` function from COMP token.
 
-## [ERC20](https://eips.ethereum.org/EIPS/eip-20#methods) functions involved:
+### [ERC20](https://eips.ethereum.org/EIPS/eip-20#methods) functions involved:
 
 - `balanceOf`
 - `transferFrom`
