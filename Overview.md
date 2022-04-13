@@ -1,10 +1,10 @@
-# # Compound Asset Listing - Overview
+# Compound Asset Listing - Overview
 
 During latest round of OpenZeppelin engagement with Compound, we reviewed past asset listing proposals and went through some important past community discussions around the topic. Further exploration has been done across some other protocols to take inspirations by established processes to list a new asset. 
 
 The output of this effort is presented below.
 
-# Overview
+## Introduction
 
 Our goal was to establish a first version of the process that the community should follow when listing an asset in the most secure way. We aim the community to review this work and propose improvements and expansions to it. On our own, we left our suggestions for future improvements at the end of this document.
 
@@ -16,7 +16,7 @@ Finally we drafted a [Process](Process.md) to follow, that includes reviewing th
 
 With this, our intention is to establish a structured process for secure asset listing, which is adaptable to community feedback and that need to improve over time making the final experience easier and robust.
 
-# Future improvements
+## Future improvements
 
 - [ ] An implementation that integrates with the forum and enforces applicants to fill in checklist's required fields to avoid bypass of important information.
 - [ ] In the future, we hope that many of the checklist items can be auto-completed in a trustless way to reduce the friction of submitting a proposal to the forum by some on-chain tooling and/or scanners to retrieve information automatically.
