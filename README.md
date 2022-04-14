@@ -1,8 +1,8 @@
 # Compound Asset Listing - Overview
 
-During latest round of OpenZeppelin engagement with Compound, we reviewed past asset listing proposals and went through some important past community discussions around the topic. Further exploration has been done across some other protocols to take inspirations by established processes to list a new asset. 
+As part of OpenZeppelin's security partnership with Compound, we reviewed past asset listing proposals and went through past community discussions around the topic. We also explored solutions on other protocols to create defined processes for asset listings that address Compound's security risks. 
 
-The output of this effort is presented below.
+The output of this effort is presented below with a comprehensive checklist for checking security risks and a step-by-step process for an asset listing proposal to follow.
 
 ## Introduction
 

@@ -6,44 +6,49 @@
 
 ### General
 
-- [ ] Name*
-- [ ] Description of the project and the token*
+- [ ] Token Asset Name*
+- [ ] A description of the project and the token*
 - [ ] Benefits to Compound Community*
 - [ ] Resources (Website, Social Media Links and docs)*
-- [ ] Who is the proposer ?
-- [ ] What is the link between the author of the new market proposal and the token?*
+- [ ] The proposal author their contact info*
+- [ ] The relationship between the author of the new market proposal and the token*
 - [ ] Social channels Metrics (Size, activity and growth).
 
 ### Market Risk Assessment
 
 - [ ] Market Cap of the token*
-- [ ] On which exchanges is the token listed and what is its respective liquidity?*
-- [ ] Indicate volatility of the token using Gauntlet formula.
+- [ ] The largest exchanges where the token is listed and its respective liquidity*
+- [ ] Indicate volatility of the token using Gauntlet's formula.
 - [ ] Total supply*
 - [ ] Emission schedule.
 
 ### Decentralization
 
-- [ ] How is this asset distributed amongst token holders? List the top 10 holders, the percentage of each and tag them in case they are known*
-- [ ] List all the the privilege roles in the token contract*
-- [ ] Is pauseable?*
-- [ ] Has a blacklist?*
+- [ ] How is this asset distributed amongst token holders? List the top 10 holders, the percentage of each holder, and tag any of them if they are known.*
+- [ ] List all of the privileged roles in the token contract. This can include whitelisted EOAs, Multi-sigs or DAOs.*
+- [ ] Is it pausable?*
+- [ ] Does it have a blacklist?*
 
-### Smart contract risk
+### Smart contract risks
 
-- [ ] Etherscan links with verified contracts*
+Codebase & On-chain Activity:
 - [ ] Public repo link (Underlying token)*
-- [ ] What audits, if any, have been done?*
+- [ ] Provide test suite with code coverage.
+- [ ] Etherscan links with verified contracts*
 - [ ] Age of the token in days*
 - [ ] Number of transactions in the contract*
+
+Security Posture:
+- [ ] What audits, if any, were performed? Provide links to the reports if they exist.*
+- [ ] Does it have an active bug bounty program?*
 - [ ] Provide emergency contacts with their responsiveness levels and response availabilities* 
+- [ ] List additional security and formal verification tools used in development
 - [ ] List of all monitoring services used by the token, if any.
+
+Smart contract Behavoir:
 - [ ] Does the token have more than one address[^1]?*
-- [ ] Provide test suite with code coverage.
 - [ ] Does the token use a compiler version greater than 0.8.0 or the SafeMath? If not, explain how the protocol deals with possible overflows and underflows*
 - [ ] During the execution of the token's functions, does the token execute external code chosen by the caller or receiver?[^2] If so, please explain the reasoning behind this decision*
-- [ ] Does it have an active bug bounty program?
-- [ ] Formal verification.
 - [ ] How much does the token contract deviate from a standard implementation of ERC20? Any additional features that the Compound DAO should know about?*
 - [ ] Is it burneable?*
 - [ ] Does it have a fixed supply? If no, who can mint?*
@@ -52,11 +57,13 @@
 - [ ] Is the contract performing arbitrary `delegatecall`s?* If the answer is yes, indicate who can make these calls and to what contracts.
 - [ ] Is it flash mintable? If yes, please provide more information on this feature*
 - [ ] Is it flash loanable? If yes, please indicate who offers the service.*
+
+Upgradablility:
 - [ ] Is it upgradeable?* If yes, answer the following questions:
   - [ ] Who is authorized to make an upgrade?
   - [ ] Can an upgrade happen instantaneously or is there a time-lock delay?
   - [ ] Which components can be upgraded?
-  - [ ] How the upgradeability design work? Who manages it and how upgrades are done?
+  - [ ] How does the upgradeability design work? Who manages it and are how upgrades performed?
   - [ ] Does it emit an event when implementation is updated?
 
 ### Initial Requirements
