@@ -32,18 +32,18 @@
 ### Smart contract risks
 
 #### Codebase & On-chain Activity:
-- [ ] Public repo link (Underlying token)*
-- [ ] Provide test suite with code coverage.
-- [ ] Etherscan links with verified contracts*
-- [ ] Age of the token in days*
-- [ ] Number of transactions in the contract*
+- [ ] Provide a Github repository for the underlying token contracts*
+- [ ] Provide a test suite with code coverage.
+- [ ] Provide Etherscan links with verified contracts*
+- [ ] Give the age of the token in days*
+- [ ] Given the number of transactions in the contract to date*
 
 #### Security Posture:
 - [ ] What audits, if any, were performed? Provide links to the reports if they exist.*
-- [ ] Does it have an active bug bounty program?*
+- [ ] Does the project have an active bug bounty program?*
 - [ ] Provide emergency contacts with their responsiveness levels and response availabilities* 
 - [ ] List additional security and formal verification tools used in development
-- [ ] List of all monitoring services used by the token, if any.
+- [ ] List all monitoring services used by the token, if any.
 
 #### Smart contract Behavoir:
 - [ ] Does the token have more than one address[^1]?*
@@ -62,24 +62,24 @@
 - [ ] Is it upgradeable?* If yes, answer the following questions:
   - [ ] Who is authorized to make an upgrade?
   - [ ] Can an upgrade happen instantaneously or is there a time-lock delay?
-  - [ ] Which components can be upgraded?
+  - [ ] Which components are upgradable?
   - [ ] How does the upgradeability design work? Who manages it and are how upgrades performed?
-  - [ ] Does it emit an event when implementation is updated?
-
+  - [ ] Does it emit an event when the implementation is updated?
+ 
 ### Initial Requirements
 
-- [ ] Collateral factor to 0.
-- [ ] Established borrow limit if necessary (Usually it is set if large loans of this assets are associated to governance attacks related to the asset itself).
-- [ ] Reserve Factor to 25% (any other convenient value can be set in other proposal depending on the assets volatility and category).
+- [ ] Set collateral factor to 0.
+- [ ] Set established borrow limit if necessary (Usually it is set if large loans of this asset are associated with potential governance attacks related to the asset itself).
+- [ ] Set reserve Factor to 25% (any other convenient value can be set in other proposals depending on the asset's volatility and category).
 
 ### Considerations
 
-- [ ] Proposals must be first in the Compound forum in the *New Markets* category.
-- [ ] The proposal must have a link that directs to the corresponding thread in the forum.
+- [ ] Proposals must be first posted in the Compound forum *New Markets* category.
+- [ ] The on-chain proposal must contain a link to the corresponding thread in the forum.
 - [ ] One proposal per asset.
 - [ ] All actions in the proposal must be related to the listing of the token.
 - [ ] Do not deploy contracts without first submitting the proposal to the forum.
-- [ ] Use markdown in the description of the proposal in the transaction, add links and start with # Add market: NAME.
+- [ ] Use markdown in the description of the proposal in the transaction, add links and start the title with # Add market: NAME.
 
 ## Community Check
 The community should review the following items before approving a new asset.
