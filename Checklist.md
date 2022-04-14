@@ -31,21 +31,21 @@
 
 ### Smart contract risks
 
-Codebase & On-chain Activity:
+#### Codebase & On-chain Activity:
 - [ ] Public repo link (Underlying token)*
 - [ ] Provide test suite with code coverage.
 - [ ] Etherscan links with verified contracts*
 - [ ] Age of the token in days*
 - [ ] Number of transactions in the contract*
 
-Security Posture:
+#### Security Posture:
 - [ ] What audits, if any, were performed? Provide links to the reports if they exist.*
 - [ ] Does it have an active bug bounty program?*
 - [ ] Provide emergency contacts with their responsiveness levels and response availabilities* 
 - [ ] List additional security and formal verification tools used in development
 - [ ] List of all monitoring services used by the token, if any.
 
-Smart contract Behavoir:
+#### Smart contract Behavoir:
 - [ ] Does the token have more than one address[^1]?*
 - [ ] Does the token use a compiler version greater than 0.8.0 or the SafeMath? If not, explain how the protocol deals with possible overflows and underflows*
 - [ ] During the execution of the token's functions, does the token execute external code chosen by the caller or receiver?[^2] If so, please explain the reasoning behind this decision*
@@ -58,7 +58,7 @@ Smart contract Behavoir:
 - [ ] Is it flash mintable? If yes, please provide more information on this feature*
 - [ ] Is it flash loanable? If yes, please indicate who offers the service.*
 
-Upgradablility:
+#### Upgradability:
 - [ ] Is it upgradeable?* If yes, answer the following questions:
   - [ ] Who is authorized to make an upgrade?
   - [ ] Can an upgrade happen instantaneously or is there a time-lock delay?
