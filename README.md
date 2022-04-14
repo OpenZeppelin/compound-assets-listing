@@ -8,7 +8,7 @@ The output of this effort is presented below with a comprehensive checklist for 
 
 1. Read the [Process](Process.md) Guide to learn how an Asset Listing should be handled securely from start to end.
 2. Use the [Checklist](Checklist.md) as a required information list to share with the community as the first step in the Asset Listing Process.
-3. Review the [Risks](Risks.md) to better understand the movivations behind our Checklist, Process and the potential intergation issues that could arise.
+3. Review the [Risks](Risks.md) to better understand the motivations behind our Checklist, Process and the potential intergation issues that could arise.
 
 ## Background
 
