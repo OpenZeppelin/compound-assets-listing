@@ -6,19 +6,19 @@
 
 ## 2. Community check:
 
-- Community handles back and forth to review that the info provided is correct and complete where required.
+- Community member(s) handles back and forth to review that the info provided is correct and complete where required.
 
 ## 3. [WIP] Risk analysis: 
 
-- The community check output is a scoring mechanism that assign a score to the proposed asset.
+- The community checks the market risks of the asset based on available data, potentially using a scoring system that would need to be created.
 
-- Gauntlet might conduct economic risk simulations to determine whether the token should be enabled as collateral, and if so, specify its risk parameterizations dependent on market conditions and ecosystem dynamics.
+- Gauntlet is currently working on a risk assessment framework to be used at this stage as well.
 
 ## 4. Tooling and simulations: 
 
-- Community run eth-saddle or any tool to check if the implemented contract matches the base implementation with the expected parameters.
+- Community member(s) run eth-saddle or any tool to check if the implemented contract matches the base implementation with the expected parameters.
 
-- Community execute available test suite and simulations.
+- Community member(s) execute available test suite and simulations.
 
 ## 5. Contracts deploy:
 
@@ -34,7 +34,7 @@
 
 ## 7. [WIP] Audit (optional): 
     
-- Proposal is reviewed if the community asks for it. _This can be done by OpenZeppelin or another third-party hired by the proposal author._
+- Proposal is reviewed by security auditors if the community asks for it. _This can be done by OpenZeppelin or another third-party hired by the proposal author._
 
 ## 8. Proposal submission: 
 
