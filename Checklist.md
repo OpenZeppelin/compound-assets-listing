@@ -18,7 +18,7 @@
 
 - [ ] Market Cap of the token*
 - [ ] The largest exchanges where the token is listed and its respective liquidity*
-- [ ] Indicate volatility of the token using Gauntlet's formula.
+- [ ] Indicate the volatility of the token, defined as the Standard Deviation of log-returns for specific time frames by [Gauntlet](https://maker-report.gauntlet.network/int_vol).
 - [ ] Total supply*
 - [ ] Emission schedule.
 
