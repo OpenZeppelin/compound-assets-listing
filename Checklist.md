@@ -66,13 +66,13 @@
   - [ ] How does the upgradeability design work? Who manages it and are how upgrades performed?
   - [ ] Does it emit an event when the implementation is updated?
  
-### Initial Requirements
+## Initial Requirements
 
 - [ ] Set collateral factor to 0.
 - [ ] Set established borrow limit if necessary (Usually it is set if large loans of this asset are associated with potential governance attacks related to the asset itself).
 - [ ] Set reserve Factor to 25% (any other convenient value can be set in other proposals depending on the asset's volatility and category).
 
-### Considerations
+## Considerations
 
 - [ ] Proposals must be first posted in the Compound forum *New Markets* category.
 - [ ] The on-chain proposal must contain a link to the corresponding thread in the forum.
