@@ -8,11 +8,11 @@
 
 - Community member(s) handles back and forth to review that the info provided is correct and complete where required.
 
-## 3. [WIP] Risk analysis: 
+## 3. Risk analysis: 
 
 - The community checks the market risks of the asset based on available data, potentially using a scoring system that would need to be created.
 
-- Gauntlet is currently working on a risk assessment framework to be used at this stage as well.
+- Gauntlet provides a [market risk assessment framework](https://gauntlet.notion.site/gauntlet/Gauntlet-Market-Risk-Framework-for-Asset-Listings-on-Compound-de5a852131514f14a560be56b6e51419) to be used at this stage.
 
 ## 4. Tooling and simulations: 
 
@@ -32,7 +32,7 @@
 
 - A formal proposal is drafted. It must include `_supportMarket` and `_setCollateralFactor` at least.
 
-## 7. [WIP] Audit (optional): 
+## 7. Audit (optional): 
     
 - Proposal is reviewed by security auditors if the community asks for it. _This can be done by OpenZeppelin or another third-party hired by the proposal author._
 

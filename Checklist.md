@@ -22,6 +22,8 @@
 - [ ] Total supply*
 - [ ] Emission schedule.
 
+Note: Gauntlet will also pull live data to conduct their [market risk assessment](https://gauntlet.notion.site/gauntlet/Gauntlet-Market-Risk-Framework-for-Asset-Listings-on-Compound-de5a852131514f14a560be56b6e51419) after the Checklist is submitted.
+
 ### Decentralization
 
 - [ ] How is this asset distributed amongst token holders? List the top 10 holders, the percentage of each holder, and tag any of them if they are known.*
