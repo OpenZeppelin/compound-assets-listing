@@ -1,30 +1,26 @@
 # Compound Asset Listing - Risks
 
-## Protocol risks
+## Protocol Risks
 
-### Security
+### Security Risks
 
-- **Codebase bug**: smart contract bugs that might be exploited. For this reason Compound battle-tested codebase went to [several round of audits](https://compound.finance/docs/security).
+- **Codebase bug**: smart contract bugs that might be exploited. For this reason Compound battle-tested codebase has gone through [several rounds of audits](https://docs.compound.finance/#security).
 
-- **External integrations failures**: Currently Compound depends on Uniswap v3 TWAP and Chainlink oracles integrations. Oracle manipulations can lead to price manipulations as described in market's risk section. The `UniswapAnchoredView` contract enforces price swings to not be bigger than the `anchor` established, mitigating the issue. The contract also stores a fallback mechanism to Uniswap v3 TWAP prices whenever price reporters become unreliable, and this might mitigate the issue assuming that:
-    - Proper monitoring solutions are setup to detect any downtime on reporters as soon as possible.
-    - Admin actions are taken to activate fallback mechanism on oracle and that the corresponding Uniswap v3 pool has enough liquidity to avoid pool liquidity manipulations.
+- **External integrations failures**: Currently Compound depends on Chainlink oracles for price data. Oracle manipulations can lead to price manipulations as described below in the market risk section.
 
-### Governance
+### Governance Risks
 
-- **Wrong governance actions**: A proposal containing dangerous transactions is executed. Like oversized COMP distribution issue. OpenZeppelin newborn relationship with Compound was set up out of the necessity to avoid having proposals undermining the protocol itself, being voted and executed.
+- **Wrong governance actions**: A proposal containing dangerous transactions is executed. Like oversized COMP distribution issue. OpenZeppelin's relationship with Compound was set up out of the necessity to avoid having proposals undermining the protocol itself.
 
 - **Governance attacks**: Concentration of big quantities of COMP (relative to thresholds and quorum parameters that might be present in the governance contracts) through loans/buy in few wallets that might defeat governance itself. This is a potential but unrealistic risk, as no concrete examples have been found.
 
-### Market
+### Market Risks
 
-Market risks are deeply analyzed and covered in [Gauntlet's report](https://gauntlet.network/reports/compound) and they can be resumed in:
+Market risks are deeply analyzed and covered in [Gauntlet's report](https://gauntlet.network/reports/compound). Notable considerations include:
 
-- **Price manipulation**: If price manipulation happens in a low liquidity market, prices can changes fast and cause honest borrowers to be liquidated, being subjected to liquidation penalties.
+- **Price manipulation**: If price manipulation happens in a low liquidity market, prices are more easily manipulated and can cause honest borrowers to be liquidated and subject them to liquidation penalties.
 
 - **Insolvency risk**: The value of the funds held by the protocol is less than the liabilities of the protocol.
-
-- **Liquidity risk**: To be illiquid (not insolvent) depending on active borrows, borrow limits and collateralization ratios.
 
 - **Not incentivized liquidations**: The prices can crash so much that liquidations are not profitable anymore, leading to a lack of incentivized liquidators.
 
@@ -32,9 +28,13 @@ Market risks are deeply analyzed and covered in [Gauntlet's report](https://gaun
 
 We highly recommend going through the Gauntlet's report to understand how these risks are mitigated or addressed by the current protocol design.
 
-## Asset specific risks:
+### Network Risks
 
-All assets specific risks (compatibility and compliance one) should be addressed in a structured manner. OpenZeppelin proposes a [Checklist](Checklist.md) of topics to watch out for and evaluate when it comes to onboard new assets. Together with this checklist we provide a comprehensive [Process](Process.md) to follow for new assets listing.
+Compound smart contracts are deployed on many different networks each with their own dynamics, security models, and asset pools. Compound by venturing into these networks takes on risks surrounding network design, evm compatability, bridge security, native vs bridged asset dynamics and more.
+
+## Asset-Specific Risks
+
+All asset-specific risks should be addressed in a structured manner. OpenZeppelin proposes a [Checklist](Checklist.md) of topics to watch out for and evaluate when it comes to onboard new assets. Together with this checklist we provide a comprehensive [Process](Process.md) to follow for new assets listing.
 
 ### Compatibility
 
@@ -54,16 +54,32 @@ Lastly it is important to remark which are the concrete interactions between Com
 
 ### Protocols contracts that interact with ERC20 tokens (including cTokens) and the relative functions interacting:
 
-- In `CErc20`
-    - [`sweepToken`](https://etherscan.io/address/0x3363bae2fc44da742df13cd3ee94b6bb868ea376#code#F1#L124) to recover tokens mistakenly sent to the contract. This function `transfer`s out of the contract the entire contract's balance of the requested asset. It is callable only by the administrator. One fixed issue, was about this function not being protected over assets with a double entry point. Read more about it [here](https://blog.openzeppelin.com/compound-tusd-integration-issue-retrospective/).
-    - [`getCashPrior`](https://etherscan.io/address/0x3363bae2fc44da742df13cd3ee94b6bb868ea376#code#F1#L147) which is used internally to retrieve contract's underlying `balanceOf`. It is important to notice how this function result can be manipulated. Read more about it [here](https://blog.openzeppelin.com/compound-comprehensive-protocol-audit/#ceth-and-cerc20-underlying-balances-can-be-manipulated).
-    - [`doTransferIn`](https://etherscan.io/address/0x3363bae2fc44da742df13cd3ee94b6bb868ea376#code#F1#L161) used internally to move underlying tokens into the protocol by the use of `balanceOf` and `transferFrom` ERC20 methods. This function can handle non standard ERC20 and also accounts for fees-deducting assets like USDT.
-    - [`initialize`](https://etherscan.io/address/0x3363bae2fc44da742df13cd3ee94b6bb868ea376#code#F1#L26) which is a single-call function used to setup proxy's storage when a new implementation is set. It uses the `totalSupply` function.
+- In `Comet`
+	- `doTransferIn` relies on the ERC20 function `transferFrom`, and is called internally within Comet by many other functions:
+		- `supply`, `supplyTo`, and `supplyFrom`. These are listed together since they all use the `supplyInternal` function.
+		- `buyCollateral`, which calls `doTransferIn` for the "base" asset.
+	- `doTransferOut` relies on the ERC20 function `transfer`, and is called internally by within Comet by many other functions:
+		- `withdraw`, `withdrawTo`, and  `withdrawFrom`. These are listed together since they all use the `withdrawInternal` function.
+		- `withdrawReserves`, an authorized function only callable by `governor` which only transfers out the "base" asset.
+		- `buyCollateral`, which calls `doTransferOut` for the "collateral" asset.
+	- `approveThis` relies on the ERC20 function `approve`. This function lets the `governor` give an approval of ANY token within the Comet system. 
+	- `getPackedAssetInternal`, which is internal and only called within the constructor for `Comet`, calls the ERC20 function `decimals` as a sanity check against user input. Note that this will NOT be applied for new assets which are added to Comet outside of the initial construction.
+	- `constructor` uses the ERC20 function `decimals` to check the decimals of the "base" token, but of course only during construction.
+	- `getCollateralReserves` calls the ERC20 function `balanceOf` for some collateral asset.
+	- `getReserves` calls the ERC20 function `balanceOf` for the "base" token.
 
-- In `Comptroller`
-    - [`updateCompSupplyIndex`](https://etherscan.io/address/0xbafe01ff935c7305907c33bf824352ee5979b526#code#F4#L1184) used internally to update to a new value the index of the `supplyState` of COMPs on a specific asset. Together with it also the block number is saved to support latest index's update. It checks the `totalSupply` of the cToken contract.
-    - [`distributeSupplierComp`](https://etherscan.io/address/0xbafe01ff935c7305907c33bf824352ee5979b526#code#F4#L1226) used internally to update the `compAccrued` and `compSupplierIndex` mappings to latest value, actually accruing COMP on user positions. It uses the `balanceOf` function.
-    - [`grantCompInternal`](https://etherscan.io/address/0xbafe01ff935c7305907c33bf824352ee5979b526#code#F4#L1371) which is used internally to send COMP tokens to the users. It uses the `transfer` function.
+- In `CometRewards`
+	- `doTransferOut` calls the ERC20 function `transfer` for some token. It is called by `claimInternal` for transferring the configured reward token to the recipient, or it can be called via `withdrawToken` by the `governor` to transfer any token out of the contract.
+	- `setRewardConfig` uses the ERC20 function `decimals` to setup rewards schemes. This function is only callable by the `governor`.
+	
+- In `BaseBulker`
+	- `sweepToken` calls the ERC20 functions `balanceOf` and `transfer` (via `doTransferOut`) to allow only the `admin` to remove any asset from the bulker. 
+	- `doTransferIn` calls the ERC20 function `transferFrom` to transfer ERC20 tokens to the bulker from a user. Note that any asset can be transferred. 
+	
+- In `MainnetBulker` (which inherits `BaseBulker`)
+	- `withdrawStEthTo` uses `doTransferOut` to call the ERC20 function `transfer`. Note that this is specifically for withdrawing one type of token (`steth`)
+	- `supplyStEthTo` uses `doTransferIn` to call the ERC20 function `transferFrom`, as well as function `approve` for both the `steth` and `wsteth` contracts, and function `wrap` in the `wsteth` contract. Note that these calls are for only the defined tokens, `steth` and `wsteth`.
+	- MainnetBulker should be considered a special case, as this market is well-defined. It lends out ETH against different collaterals which are simply interest-bearing ETH. Still, it is technically possible for new assets to be listed in this market. Additionally, it is important to note that Lido Staked ETH (`steth` here) is a _rebasing_ token, which is why there are special functions defined for its transfer into and out of the protocol.
 
 - In `GovernorBravoDelegate`
     - [`castVoteInternal`](https://etherscan.io/address/0x563a63d650a5d259abae9248dddc6867813d3f87#code#F1#L266) which is used internally to save the result of a vote cast. It uses the `getPriorVotes` function from COMP token.
@@ -73,5 +89,7 @@ Lastly it is important to remark which are the concrete interactions between Com
 
 - `balanceOf`
 - `transferFrom`
-- `totalSupply`
+- `transfer`
+- `decimals`
+- `approve`
 - `delegate` and `getPriorVotes` only for [`COMP`](https://etherscan.io/address/0xc00e94cb662c3520282e6f5717214004a7f26888#code) or `COMP`-like tokens
