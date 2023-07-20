@@ -14,7 +14,6 @@
   - Gauntlet provides a [market risk assessment framework](https://gauntlet.notion.site/gauntlet/Gauntlet-Market-Risk-Framework-for-Asset-Listings-on-Compound-de5a852131514f14a560be56b6e51419) to be used at this stage.
 
 - ### Tooling and Simulations 
-  - Community member(s) run eth-saddle or any tool to check if the implemented contract matches the base implementation with the expected parameters.
   - Community member(s) execute available test suite and simulations. These must be performed against the contracts deployed on the target network.
 
 ## 3. Finalize Deployment
