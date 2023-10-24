@@ -65,6 +65,7 @@ Note: Gauntlet will also pull live data to conduct their [market risk assessment
 - [ ] Does it have a fixed supply? If no, who can mint?*
 - [ ] Is it a rebasing token?*
 - [ ] Does the token charge fees on transfers?*
+- [ ] Does it implements any transfer hooks? Or hooks on any method?*
 - [ ] Is the contract performing arbitrary `delegatecall`s?* If the answer is yes, indicate who can make these calls and to what contracts.
 - [ ] Is it flash mintable? If yes, please provide more information on this feature*
 - [ ] Is it flash loanable? If yes, please indicate who offers the service.*
