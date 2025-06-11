@@ -70,7 +70,7 @@ Note: Gauntlet will also pull live data to conduct their [market risk assessment
 - [ ] Is it flash mintable? If yes, please provide more information on this feature*
 - [ ] Is it flash loanable? If yes, please indicate who offers the service.*
 - [ ] What are the typical gas costs for calling each of the standard ERC20 functions?
-- [ ] If the token is a vault share (example: ERC-4626 token), is the exchange rate of the vault manipulable with the donation of a constituent asset of the vault?
+- [ ] If the token is a vault share (example: ERC-4626 token), is the exchange rate of the vault manipulable with the donation of a constituent asset of the vault?*
 
 #### Price Feed Behavior
 - [ ] Is the price feed supported by ChainLink?
