@@ -60,7 +60,7 @@ Note: Gauntlet will also pull live data to conduct their [market risk assessment
 - [ ] Does the token use a compiler version greater than 0.8.0 or the SafeMath? If not, explain how the protocol deals with possible overflows and underflows*
 - [ ] During the execution of the token's functions, does the token execute external code chosen by the caller or receiver?[^2] If so, please explain the reasoning behind this decision*
 - [ ] How does the token contract deviate from a standard implementation of ERC20? Any additional features that the Compound DAO should know about?*
-- [ ] Is it burneable?*
+- [ ] Is it burnable?*
 - [ ] Does the token contract have a fallback function? If so, when does it revert?[^3]
 - [ ] Does it have a fixed supply? If no, who can mint?*
 - [ ] Is it a rebasing token?*
@@ -70,6 +70,7 @@ Note: Gauntlet will also pull live data to conduct their [market risk assessment
 - [ ] Is it flash mintable? If yes, please provide more information on this feature*
 - [ ] Is it flash loanable? If yes, please indicate who offers the service.*
 - [ ] What are the typical gas costs for calling each of the standard ERC20 functions?
+- [ ] Is the token a vault share (e.g., an ERC-4626 token)? If yes, then what safeguards prevent someone from manipulating its exchange rate by donating assets to the vault?*
 
 #### Price Feed Behavior
 - [ ] Is the price feed supported by ChainLink?
